@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Template</title>
+  <!-- CSS styles or external stylesheets -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    /* Add styles here */
+  </style>
+</head>
+<body>
+  <!-- HTML email content -->
+  <div style="width: 100%; 
+              max-width: 500px;
+              margin: auto;
+              font-family: 'Roboto', sans-serif;">
+    <header>
+      <h2>New Message</h2>
+    </header>
+    <div style="border: 1px solid rgb(239, 239, 239);
+                padding: 20px;">
+      <h3>Contact Form</h3>
+      <p>Name: <br>
+        <b>{{ name }}</b>
+      </p>
+      <p>E-mail: <br>
+        <b>{{ email }}</b>
+      </p>
+      <p>Message: <br>
+        <b>{{ message }}</b>
+      </p>
+      <br>
+    </div>
+    <footer>
+      <p style="font-size: 13px;">
+        From Your Website 
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

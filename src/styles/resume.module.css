@@ -1,0 +1,42 @@
+.intro a {
+    color: var(---link);
+    font-weight: bold;
+}
+
+.intro a:hover {
+    text-decoration: underline;
+}
+
+.my-resume {
+    margin-bottom: 50px;
+}
+
+.frame-container {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    padding-top: 141.429%;
+    padding-bottom: 0px;
+    box-shadow: rgba(63, 69, 81, 0.16) 0px 2px 8px 0px;
+    margin-top: 1.6em;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+}
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border: medium;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* For Dark Mode */
+:global(.dark-mode) .intro a{
+    color: var(---link-dmode) !important;
+}

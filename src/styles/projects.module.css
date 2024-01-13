@@ -1,0 +1,32 @@
+.filter-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.filter-action a{
+    font-size: calc(13px + 0.9px);
+    transition: all 0.3s ease 0s;
+    background: transparent;
+    color: black;
+    margin: 0px 1rem 0px 0px;
+}
+
+.filter-action a.active{
+    font-weight: 900 !important;
+    color: white;
+    background: var(---secondary);
+    padding: 5px 22px;
+    border-radius: 3px;
+}
+
+/* For Dark Mode */
+:global(.dark-mode) .filter-action a{
+    color: white;
+}
+
+:global(.dark-mode) .filter-action a.active{
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,120 @@
+.content{
+    display: flex;
+    margin-top: 50px;
+}
+
+.shortintro{
+    line-height: 40px;
+    width: 100%;
+}
+
+.shortintro h1{
+    font-size: 32px;
+}
+
+.shortintro p{
+    white-space: nowrap;
+
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    position: relative;
+}
+
+.avatar{
+    width: 500px;
+    text-align: right;
+    padding-right: 11px;
+
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    position: relative;
+}
+
+.avatar img{
+    width: 100%;
+    margin-top: -100px;
+    max-width: 325px;
+    height: 350px;
+}
+
+.action {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+      bottom: -10px;
+      right: -2px;
+    }
+  
+    to {
+      opacity: 1;
+      bottom: 0px;
+      right: 0px;
+    }
+}
+
+.action a:first-child {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(---primary);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 15px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.dark-mode .action a:first-child{
+    background-color: gray !important;
+}
+
+.action a:first-child b{
+    margin: 0 6px;
+}
+
+/* === Responsive view : START */
+
+@media only screen and (max-width: 1000px) {
+    .avatar{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .action {
+        display: block;
+    }
+
+    .action a{
+        display: block;
+    }
+
+    .action a:last-child{
+        margin-top: 30px;
+        width: 200px;
+    }
+
+    .shortintro p{
+        white-space: unset;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+/* For Dark mode */
+:global(.dark-mode) .action a:first-child{
+    background-color: white;
+    color: black;
+}
