@@ -27,14 +27,11 @@ class MyApp extends App {
   }
 
   render() {
-    const nodeRef = React.createRef();
     const { Component, pageProps } = this.props;
 
     return (
       <>
         <PageTransition
-          in
-          nodeRef={nodeRef}
           timeout={400}
           classNames="page-transition"
           loadingDelay={300}
