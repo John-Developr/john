@@ -38,9 +38,12 @@ class MyApp extends App {
           timeout={400}
           classNames="page-transition"
           loadingDelay={300}
-          key={typeof window === 'undefined' ? 'ssr' : window.location.pathname}
         >
-          <AppContext.Provider value={{}}>
+          <AppContext.Provider  
+            key={Math.floor(Math.random() * Math.floor(20))} 
+            value={{
+            }}
+            >
             <Component {...pageProps} />
           </AppContext.Provider>
         </PageTransition>
