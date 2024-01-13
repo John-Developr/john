@@ -1,4 +1,4 @@
-const STATE = 'CODE_WONDERS';
+const STATE = 'JOHN_CARLO';
 export const loadState = () => {
   try {
     const serializedState = localStorage.getItem(STATE);

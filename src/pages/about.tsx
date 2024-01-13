@@ -37,7 +37,8 @@ class About extends Component<HomeProps, HomeState> {
                 <p>Forty Degrees Celcius, Inc.</p>
                 <span>2023 - Present</span>
                 <ul className={styles['to-dos']}>
-                  <li>No Description</li>
+                  <li>
+As an iOS Developer, my role encompasses the end-to-end development lifecycle, from designing and testing applications on the iOS platform to collaborating closely with Planning and Design teams for specification delivery. I am dedicated to enhancing code quality by adhering to standards and best practices, with a focus on implementing UI/UX elements according to approved client designs. My responsibilities extend to ensuring the performance, quality, and responsiveness of applications, assessing the technical feasibility of features, and actively contributing to code maintenance. Additionally, I specialize in resolving memory leaks, fine-tuning performance, and seamlessly handling RESTful APIs to create robust and efficient iOS applications</li>
                 </ul>
               </li>
               <li>
@@ -45,7 +46,7 @@ class About extends Component<HomeProps, HomeState> {
                 <p>Forty Degrees Celcius, Inc.</p>
                 <span>2023 - Present</span>
                 <ul className={styles['to-dos']}>
-                  <li>No Description</li>
+                  <li>As a Web Developer for nativecamp.net, the number one online teaching platform in Japan, I oversee both backend and front-end development, ensuring the maintenance and scalability of our large web applications. My responsibilities include designing, documenting, and delivering APIs that seamlessly manage data between the server and users on Android and iOS devices. Additionally, I provide ongoing support for existing applications and undertake the planning, design, and documentation of optimized database changes essential for meeting specified requirements. My role extends to performing SQL optimizations on existing application features and conducting thorough data analysis and investigations to address any issues that may arise.</li>
                 </ul>
               </li>
               <li>
