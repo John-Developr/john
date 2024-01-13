@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FontAwesomeIcon, IconProp } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faFileAlt,
   faQuestionCircle,
@@ -13,7 +13,7 @@ import {
 
 interface MenuItem {
   path: string;
-  icon: IconDefinition | IconProp;
+  icon: IconDefinition;
 }
 
 interface MenuProps {
