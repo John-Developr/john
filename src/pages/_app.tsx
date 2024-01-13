@@ -32,9 +32,9 @@ class MyApp extends App {
     return (
       <>
         <PageTransition
-          timeout={400}
+          timeout={200}
           classNames="page-transition"
-          loadingDelay={300}
+          loadingDelay={100}
         >
           <AppContext.Provider  
             key={Math.floor(Math.random() * Math.floor(20))} 
