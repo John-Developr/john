@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
-import Image from '@/helpers/image';
-import SideBarModal from '@/helpers/modals/sideBar';
+import Image from "@/helpers/image";
+import SideBarModal from "@/helpers/modals/sideBar";
 
 interface MansoryItemProps {
   item: {
@@ -25,27 +25,27 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
   const [show, setShow] = useState(false);
-  const [height] = useState(arrayRandomItem(['400px', '454px', '310px']));
+  const [height] = useState(arrayRandomItem(["400px", "454px", "310px"]));
 
   const handleOpenSideBar = () => {
     if (!htmlRef.current) return; 
-    htmlRef.current.style.overflow = 'hidden';
+    htmlRef.current.style.overflow = "hidden";
     setShow(true);
   };
 
   const handleCloseNav = () => {
     if (!htmlRef.current || !overlayRef.current) return;
-    htmlRef.current.style.overflow = '';
+    htmlRef.current.style.overflow = "";
     overlayRef.current.remove();
     setShow(false);
   }
 
   const handleChildRef = (ref: HTMLDivElement) => {
-    const findOverlay = document.querySelector('.overlay');
-    const overlay = document.createElement('div');
+    const findOverlay = document.querySelector(".overlay");
+    const overlay = document.createElement("div");
     
     if (!findOverlay){
-      overlay.classList.add('overlay');
+      overlay.classList.add("overlay");
       overlay.onclick = handleCloseNav;
       overlayRef.current = overlay;
       if (ref) ref.prepend(overlayRef.current);
@@ -53,8 +53,8 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
   };
 
   useEffect(() => {
-    if (typeof document !== 'undefined' && !htmlRef.current) {
-      htmlRef.current = document.querySelector('html');
+    if (typeof document !== "undefined" && !htmlRef.current) {
+      htmlRef.current = document.querySelector("html");
     }
   }, []);
 
@@ -68,7 +68,7 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
         aria-label={`${item.title} ${item.description}`}
         onClick={handleOpenSideBar}
         onKeyPress={(e) => {
-          if (e.key === 'Enter') return handleOpenSideBar();
+          if (e.key === "Enter") return handleOpenSideBar();
         }}
         tabIndex={0}>
           <Image src={item.imageUrl} alt={item.imageUrl} />

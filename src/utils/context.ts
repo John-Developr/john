@@ -1,5 +1,5 @@
-import { createContext } from 'react';
-import PROJECTS_DATA from '@/appData/projects';
+import { createContext } from "react";
+import PROJECTS_DATA from "@/appData/projects";
 
 const AppContext = createContext({} as any);
 // export const ArticleContext = createContext(ARTICLE_DATA);

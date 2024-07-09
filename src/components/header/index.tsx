@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Logo from './logo';
-import Tabs from './tabs';
+import Logo from "./logo";
+import Tabs from "./tabs";
 
 class Header extends React.Component {
   render() {

@@ -1,13 +1,13 @@
-import React, { Component, FormEvent, ChangeEvent, createRef } from 'react';
+import React, { Component, FormEvent, ChangeEvent, createRef } from "react";
 
-import Layout, { PageWrapper } from '@/helpers/layout';
-import styles from '@/styles/contact.module.css';
+import Layout, { PageWrapper } from "@/helpers/layout";
+import styles from "@/styles/contact.module.css";
 
-import NextArrow from '@/helpers/nextArrow';
-import Footer from '@/components/footer';
-import { myPersonalAndWorkEmail } from '@/utils/meUtils';
-import { sendContactForm } from '@/lib/api';
-import ErrorForm from '@/helpers/error';
+import NextArrow from "@/helpers/nextArrow";
+import Footer from "@/components/footer";
+import { myPersonalAndWorkEmail } from "@/utils/meUtils";
+import { sendContactForm } from "@/lib/api";
+import ErrorForm from "@/helpers/error";
 
 interface ContactProps {}
 
@@ -35,7 +35,7 @@ class Contact extends Component<ContactProps, ContactState> {
             error:  {
                 show: false,
                 fields: [],
-                message: '',
+                message: "",
                 status: false 
             },
             loader: false,
@@ -55,7 +55,7 @@ class Contact extends Component<ContactProps, ContactState> {
     };
 
     hasErrorField = (field: string, list: ErrorFields[]): string => {
-        return list.some(fields => fields.hasOwnProperty(field)) ? styles['has-error'] : '';
+        return list.some(fields => fields.hasOwnProperty(field)) ? styles["has-error"] : "";
     };
 
     onTypingField = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -67,7 +67,7 @@ class Contact extends Component<ContactProps, ContactState> {
             error: {
                 ...prevState.error,
                 fields: prevState.error.fields.filter(field => field.hasOwnProperty(name) ? !value.trim() : true)
-                    .concat(!value.trim() ? { [name]: '' } : []),
+                    .concat(!value.trim() ? { [name]: "" } : []),
             },
         }));
     };
@@ -82,7 +82,7 @@ class Contact extends Component<ContactProps, ContactState> {
                 const response = await sendContactForm(formData);
                 const responseData = await response.json();
                 if (!response.ok){
-                    if (responseData.hasOwnProperty('error'))  {
+                    if (responseData.hasOwnProperty("error"))  {
                         return this.setState(prevState => ({
                             error: {
                                 ...prevState.error,
@@ -118,7 +118,7 @@ class Contact extends Component<ContactProps, ContactState> {
                         ...prevState.error,
                         fields: [],
                         show: true,
-                        message: 'Error submitting contact form: ' + error.message,
+                        message: "Error submitting contact form: " + error.message,
                         status: false,
                     },
                     loader: false
@@ -146,22 +146,22 @@ class Contact extends Component<ContactProps, ContactState> {
                         <a href={`mailto:${myPersonalAndWorkEmail}`} id="cardHover">johncarlo.fullstackdev@gmail.com</a>
                     </p>
                     <form className={styles.form} onSubmit={this.onSubmit} ref={this.formRef}>
-                        <div className={`${styles['form-cotntrol']} ${this.hasErrorField('name', fields)}`}>
+                        <div className={`${styles["form-cotntrol"]} ${this.hasErrorField("name", fields)}`}>
                             <input type="text" name="name" placeholder="Name" onChange={this.onTypingField}/>
                         </div>
-                        <div className={`${styles['form-cotntrol']} ${this.hasErrorField('email', fields)}`}>
+                        <div className={`${styles["form-cotntrol"]} ${this.hasErrorField("email", fields)}`}>
                             <input type="text" name="email" placeholder="Email" onChange={this.onTypingField}/>
                         </div>
-                        <div className={`${styles['form-cotntrol']} ${this.hasErrorField('message', fields)}`}>
+                        <div className={`${styles["form-cotntrol"]} ${this.hasErrorField("message", fields)}`}>
                             <textarea name="message" rows={7} placeholder="Message" onChange={this.onTypingField}></textarea>
                         </div>
-                        <button className={styles['btn-send']} id="cardHover">
+                        <button className={styles["btn-send"]} id="cardHover">
                             {loader ? (
                                  <>
                                     <span className="loader"></span>
                                     Sending...
                                  </>
-                            )  : 'Send Message'}
+                            )  : "Send Message"}
                         </button>
                     </form>
                     <NextArrow path="/" text="Go Back Home." className="icon-after" />

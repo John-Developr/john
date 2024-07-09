@@ -6,7 +6,7 @@ export const capitalizeFirstLetter = (str: string): string => {
 };
 
 export const stringReplacer = (toReplace: string, newStr: string, inputString: string): string => {
-    const regex = new RegExp(toReplace, 'g'); // Create a regex pattern from 'toReplace' string with 'g' flag for global replacement
+    const regex = new RegExp(toReplace, "g"); // Create a regex pattern from "toReplace" string with "g" flag for global replacement
     return inputString.replace(regex, newStr); // Perform the replacement and return the modified string
 };
 

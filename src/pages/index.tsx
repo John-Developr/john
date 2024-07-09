@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import styles from '@/styles/home.module.css';
-import Layout, { PageWrapper } from '../helpers/layout';
-import NextArrow from '@/helpers/nextArrow';
-import Image from '@/helpers/image';
-import Footer from '@/components/footer';
-import { Age, myPersonalAndWorkEmail } from '@/utils/meUtils';
+import styles from "@/styles/home.module.css";
+import Layout, { PageWrapper } from "../helpers/layout";
+import NextArrow from "@/helpers/nextArrow";
+import Image from "@/helpers/image";
+import Footer from "@/components/footer";
+import { Age, myPersonalAndWorkEmail } from "@/utils/meUtils";
 
 interface HomeProps {}
 

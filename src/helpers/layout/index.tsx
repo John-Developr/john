@@ -1,15 +1,15 @@
-import React, { PropsWithChildren } from 'react';
-import Head from 'next/head';
-import { Karla } from 'next/font/google';
+import React, { PropsWithChildren } from "react";
+import Head from "next/head";
+import { Karla } from "next/font/google";
 
-import Header from '@/components/header';
-import Cursor from '@/components/cursor';
+import Header from "@/components/header";
+import Cursor from "@/components/cursor";
 
-const karla = Karla({ subsets: ['latin'] })
+const karla = Karla({ subsets: ["latin"] })
 
 const Layout: React.FC<PropsWithChildren<{
     title?: string;
-  }>> = ({ children, title = 'Home' }) => {
+  }>> = ({ children, title = "Home" }) => {
     return (
     <>
       <Head>
@@ -38,8 +38,8 @@ export const PageWrapper: React.FC<PropsWithChildren<{}> &
       <>
         <Header />
           <section {...rest} id="main-content">
-            <main className='container'>
-                {title && <h1 className='pages-title'>{title}</h1>}
+            <main className="container">
+                {title && <h1 className="pages-title">{title}</h1>}
                 {children}
             </main>
           </section>

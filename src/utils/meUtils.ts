@@ -19,13 +19,13 @@ export const Age = () => {
     return age;
 };  
 
-export const myResumeEmbedURL = 'https://www.canva.com/design/DAFl3W_qSJU/view?embed';
-export const myResumeFilePath = '/files/John Carlo A. Ylanan - Resume.pdf';
+export const myResumeEmbedURL = "https://www.canva.com/design/DAFl3W_qSJU/view?embed";
+export const myResumeFilePath = "/files/John Carlo A. Ylanan - Resume.pdf";
 
 export const myName = {
-    fname: 'John Carlo',
-    mname: 'Amistad',
-    lname: 'Ylanan'
+    fname: "John Carlo",
+    mname: "Amistad",
+    lname: "Ylanan"
 };
 
-export const myPersonalAndWorkEmail = 'johncarlo.fullstackdev@gmail.com';
+export const myPersonalAndWorkEmail = "johncarlo.fullstackdev@gmail.com";

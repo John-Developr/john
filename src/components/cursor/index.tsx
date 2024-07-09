@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import useIsMounted from '../../utils/useIsMounted';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import useIsMounted from "../../utils/useIsMounted";
 
 // Define a type for the Event used in mouse events
 type MouseEvent = globalThis.MouseEvent;
@@ -24,11 +24,11 @@ const Cursor = () => {
   const toggleCursorVisibility = useCallback(() => {
     if (dot?.current && dotOutline?.current)
       if (cursorVisible.current) {
-        dot.current.style.opacity = '1';
-        dotOutline.current.style.opacity = '1';
+        dot.current.style.opacity = "1";
+        dotOutline.current.style.opacity = "1";
       } else {
-        dot.current.style.opacity = '0';
-        dotOutline.current.style.opacity = '0';
+        dot.current.style.opacity = "0";
+        dotOutline.current.style.opacity = "0";
       }
   }, []);
 
@@ -43,7 +43,7 @@ const Cursor = () => {
 
   const mouseOverEvent = useCallback(
     (e: MouseEvent) => {
-      if ((e.target as any)?.id === 'cardHover') {
+      if ((e.target as any)?.id === "cardHover") {
         cursorEnlarged.current = true;
         toggleCursorSize();
       }
@@ -53,7 +53,7 @@ const Cursor = () => {
 
   const mouseOutEvent = useCallback(
     (e: MouseEvent) => {
-      if ((e.target as any)?.id === 'cardHover') {
+      if ((e.target as any)?.id === "cardHover") {
         cursorEnlarged.current = false;
         toggleCursorSize();
       }
@@ -79,8 +79,8 @@ const Cursor = () => {
       endX.current = e.pageX;
       endY.current = e.pageY;
       if (dot?.current) {
-        dot.current.style.top = endY.current + 'px';
-        dot.current.style.left = endX.current + 'px';
+        dot.current.style.top = endY.current + "px";
+        dot.current.style.left = endX.current + "px";
       }
     },
     [toggleCursorVisibility]
@@ -91,8 +91,8 @@ const Cursor = () => {
     _y.current += (endY.current - _y.current) / delay;
 
     if (dotOutline?.current) {
-      dotOutline.current.style.top = _y.current + 'px';
-      dotOutline.current.style.left = _x.current + 'px';
+      dotOutline.current.style.top = _y.current + "px";
+      dotOutline.current.style.left = _x.current + "px";
     }
 
     requestRef.current = requestAnimationFrame(animateDotOutline);
@@ -102,20 +102,20 @@ const Cursor = () => {
     const requestRefs = requestRef?.current;
 
     if (isMounted()) {
-      document.addEventListener('mousemove', mouseMoveEvent);
-      document.addEventListener('mouseenter', mouseEnterEvent);
-      document.addEventListener('mouseleave', mouseLeaveEvent);
-      document.addEventListener('mouseover', mouseOverEvent);
-      document.addEventListener('mouseout', mouseOutEvent);
+      document.addEventListener("mousemove", mouseMoveEvent);
+      document.addEventListener("mouseenter", mouseEnterEvent);
+      document.addEventListener("mouseleave", mouseLeaveEvent);
+      document.addEventListener("mouseover", mouseOverEvent);
+      document.addEventListener("mouseout", mouseOutEvent);
 
       animateDotOutline();
     }
     return () => {
-      document.removeEventListener('mousemove', mouseMoveEvent);
-      document.removeEventListener('mouseenter', mouseEnterEvent);
-      document.removeEventListener('mouseleave', mouseLeaveEvent);
-      document.removeEventListener('mouseover', mouseOverEvent);
-      document.removeEventListener('mouseout', mouseOutEvent);
+      document.removeEventListener("mousemove", mouseMoveEvent);
+      document.removeEventListener("mouseenter", mouseEnterEvent);
+      document.removeEventListener("mouseleave", mouseLeaveEvent);
+      document.removeEventListener("mouseover", mouseOverEvent);
+      document.removeEventListener("mouseout", mouseOutEvent);
 
       cancelAnimationFrame(requestRefs as number);
     };

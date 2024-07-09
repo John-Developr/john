@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Image from 'next/image';
+import React, { Component } from "react";
+import Image from "next/image";
 
-import styles from '@/styles/404.module.css';
-import Layout, { PageWrapper } from '@/helpers/layout';
-import NextArrow from '@/helpers/nextArrow';
-import Footer from '@/components/footer';
+import styles from "@/styles/404.module.css";
+import Layout, { PageWrapper } from "@/helpers/layout";
+import NextArrow from "@/helpers/nextArrow";
+import Footer from "@/components/footer";
 
 interface Custom404Props {}
 
@@ -27,7 +27,7 @@ class Custom404 extends Component<Custom404Props, Custom404State> {
               <NextArrow path="/" text="Go Back Home." className="icon-before" />
             </div>
             <Image 
-              className={styles['dot-image']}
+              className={styles["dot-image"]}
               src="/imgs/group-dot(2).png" 
               alt="" 
               width={47} 

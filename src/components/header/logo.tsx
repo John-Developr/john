@@ -1,6 +1,6 @@
-import React, { Component, HTMLProps } from 'react';
-import Router from 'next/router';
-import { myName } from '@/utils/meUtils';
+import React, { Component, HTMLProps } from "react";
+import Router from "next/router";
+import { myName } from "@/utils/meUtils";
 
 interface LogoProps extends HTMLProps<HTMLDivElement> {
     // Define any additional props specific to your component
@@ -10,8 +10,8 @@ interface LogoProps extends HTMLProps<HTMLDivElement> {
 class Logo extends Component<LogoProps> {
     handleGoToHome = () => {
         const { pathname } = Router;
-        if (pathname !== '/') {
-            return Router.push('/');
+        if (pathname !== "/") {
+            return Router.push("/");
         }
     };
 

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Svg from '@/helpers/icons';
+import React, { Component } from "react";
+import Svg from "@/helpers/icons";
 
 interface ErrorFormProps {
   isError: boolean; // Controls the visibility of the error message dialog
@@ -21,7 +21,7 @@ class ErrorForm extends Component<ErrorFormProps, ErrorFormState> {
   componentDidUpdate(prevProps: ErrorFormProps) {
     const { isError, timeout, updateErrorState } = this.props;
 
-    if (isError !== prevProps.isError && isError && typeof timeout === 'number') {
+    if (isError !== prevProps.isError && isError && typeof timeout === "number") {
       const timeoutId = setTimeout(() => {
         updateErrorState();
       }, timeout);
@@ -44,7 +44,7 @@ class ErrorForm extends Component<ErrorFormProps, ErrorFormState> {
     const { message, isError, status } = this.props;
 
     return (
-      <div className={`form-error ${isError && (status ? 'show-success' : 'show-error')}`}>
+      <div className={`form-error ${isError && (status ? "show-success" : "show-error")}`}>
         <div className="container">
           <div className="content">{message}</div>
           <button onClick={this.clearTimeoutOnClose} id="cardHover"></button>

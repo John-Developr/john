@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter, faLinkedin, faGithub  } from '@fortawesome/free-brands-svg-icons';
-import Menu from '@/components/menu';
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faTwitter, faLinkedin, faGithub  } from "@fortawesome/free-brands-svg-icons";
+import Menu from "@/components/menu";
 
 
 interface FooterProps {
@@ -12,23 +12,23 @@ class Footer extends Component<FooterProps> {
     state = {
         socials: [
             { 
-                path: '/',
+                path: "/",
                 icon: faFacebook
             },
             { 
-                path: '/',
+                path: "/",
                 icon: faInstagram
             },
             { 
-                path: '/',
+                path: "/",
                 icon: faTwitter
             },
             { 
-                path: '/',
+                path: "/",
                 icon: faLinkedin
             },
             { 
-                path: '/',
+                path: "/",
                 icon: faGithub
             },
             // Add more social icons as needed

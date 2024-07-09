@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 const email = process.env.EMAIL_USERNAME;
 const pass = process.env.EMAIL_PASS;
 
 export const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
         user: email,
         pass,
@@ -13,6 +13,6 @@ export const transporter = nodemailer.createTransport({
 });
 
 export const mailOptions = {
-    from: 'fdc.johncarloy@gmail.com',
+    from: "fdc.johncarloy@gmail.com",
     to: email
 };

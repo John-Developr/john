@@ -1,10 +1,10 @@
-import React, { useMemo, useRef, useEffect, ChangeEvent, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Router from 'next/router';
+import React, { useMemo, useRef, useEffect, ChangeEvent, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Router from "next/router";
 
-import Svg from '@/helpers/icons';
-import { capitalizeFirstLetter } from '@/utils/stringUtils';
+import Svg from "@/helpers/icons";
+import { capitalizeFirstLetter } from "@/utils/stringUtils";
 
 interface TabsProps extends React.HTMLProps<HTMLElement> {
   className: any;
@@ -15,9 +15,11 @@ const Tabs: React.FC<TabsProps> = ({ className, ...rest }) => {
   // const htmlRef = useRef<HTMLHtmlElement | null>(null);
   const [mode, modeSet] = useState(false);
   const navs = useMemo(() => [
-      { path: 'about', cardHover: true },
-      { path: 'projects', cardHover: true },
-      { path: 'contact', cardHover: true }], []);
+    { path: "about", cardHover: true },
+    { path: "projects", cardHover: true },
+    { path: "contact", cardHover: true }], 
+    []
+  );
 
   const router = useRouter();
   const activePath = router.pathname;
@@ -79,20 +81,20 @@ const Tabs: React.FC<TabsProps> = ({ className, ...rest }) => {
 
   const handleDarkLightMode = () => {
     const { pathname } = Router;
-    const htlmElement = document.querySelector('html');
+    const htlmElement = document.querySelector("html");
 
     Router.push(pathname);
 
     setTimeout(() => {
-      if (htlmElement?.classList.contains('light-mode')) {
-        htlmElement?.classList.remove('light-mode');
-        htlmElement?.classList.add('dark-mode');
-        return localStorage.setItem('dark-light-mode', 'dark-mode')
+      if (htlmElement?.classList.contains("light-mode")) {
+        htlmElement?.classList.remove("light-mode");
+        htlmElement?.classList.add("dark-mode");
+        return localStorage.setItem("dark-light-mode", "dark-mode")
       };
   
-      htlmElement?.classList.remove('dark-mode');
-      htlmElement?.classList.add('light-mode');
-      return localStorage.setItem('dark-light-mode', 'light-mode');
+      htlmElement?.classList.remove("dark-mode");
+      htlmElement?.classList.add("light-mode");
+      return localStorage.setItem("dark-light-mode", "light-mode");
     }, 300);
   }
 
@@ -106,7 +108,7 @@ const Tabs: React.FC<TabsProps> = ({ className, ...rest }) => {
         <ul>
           {filteredNavs.map((element, index) => (
             <li key={index}>
-              <Link href={element.path} id={element.cardHover ? 'cardHover' : ''}>
+              <Link href={element.path} id={element.cardHover ? "cardHover" : ""}>
                 {capitalizeFirstLetter(element.path)}
               </Link>
             </li>

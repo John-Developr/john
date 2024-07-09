@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import styles from "@/styles/projects.module.css";
-import Layout, { PageWrapper } from '@/helpers/layout';
-import NextArrow from '@/helpers/nextArrow';
-import MansoryLayout from '@/helpers/mansory';
-import MansoryItem from '@/helpers/mansory/mansory-item';
-import Footer from '@/components/footer';
-import { ProjectsContext } from '@/utils/context';
-import { capitalizeFirstLetter } from '@/utils/stringUtils';
+import Layout, { PageWrapper } from "@/helpers/layout";
+import NextArrow from "@/helpers/nextArrow";
+import MansoryLayout from "@/helpers/mansory";
+import MansoryItem from "@/helpers/mansory/mansory-item";
+import Footer from "@/components/footer";
+import { ProjectsContext } from "@/utils/context";
+import { capitalizeFirstLetter } from "@/utils/stringUtils";
 
 interface Project {
   title: string;
@@ -32,13 +32,13 @@ class Projects extends Component<{}, ProjectsState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      filtered: '',
+      filtered: "",
       filterData: [
-        'all',
-        'projects',
-        'thesis',
-        'practice',
-        'other'
+        "all",
+        "projects",
+        "thesis",
+        "practice",
+        "other"
       ],
       mansoryKey: 0
     };
@@ -51,7 +51,7 @@ class Projects extends Component<{}, ProjectsState> {
   filterProjects = (projectsData: Project[]) => {
     const { filtered } = this.state;
 
-    if (filtered === 'all' || !filtered) {
+    if (filtered === "all" || !filtered) {
       return projectsData;
     }
 
@@ -75,13 +75,13 @@ class Projects extends Component<{}, ProjectsState> {
       <Layout title="Projects">
         <PageWrapper title="Projects">
           <br />
-          <div className={styles['filter-action']}>
+          <div className={styles["filter-action"]}>
             {filterData.map((value, index) => (
               <a
                 key={index}
                 href={`#${value}`}
                 onClick={() => this.setFiltered(value)}
-                className={value === filtered ? styles['active'] : ''}
+                className={value === filtered ? styles["active"] : ""}
                 id="cardHover"
               >
                 {capitalizeFirstLetter(value)}

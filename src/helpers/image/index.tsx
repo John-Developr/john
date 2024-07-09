@@ -2,8 +2,8 @@
 /*                            External Dependencies                           */
 /* -------------------------------------------------------------------------- */
 
-import React from 'react';
-import { default as Img } from 'next/image';
+import React from "react";
+import { default as Img } from "next/image";
 /* ----------------------------- Image PropTypes ---------------------------- */
 interface IImage {
   src: string;
@@ -13,14 +13,14 @@ interface IImage {
 
 /* --------------------------- Image defaultProps --------------------------- */
 const defaultProps = {
-  alt: 'johncarlo.dev',
-  className: '',
+  alt: "johncarlo.dev",
+  className: "",
 };
 
 const Image: React.FC<IImage> = ({ src, alt, className }) => (
   <Img
     src={src}
-    alt={alt || ''}
+    alt={alt || ""}
     id="cardHover"
     className={className}
     width={500}
