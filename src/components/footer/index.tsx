@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter, faLinkedin, faGithub  } from "@fortawesome/free-brands-svg-icons";
 import Menu from "@/components/menu";
+import { currentYear } from "@/utils/date";
 
 
 interface FooterProps {
@@ -50,6 +51,7 @@ class Footer extends Component<FooterProps> {
                     ))}
                 </footer>
                 <Menu />
+                <span className="copyright">Copyright &copy; Since 2023 - {currentYear()}. All rights reserve.</span>
             </>
         );
     }

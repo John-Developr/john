@@ -26,7 +26,6 @@ export const saveState = (state: any) => {
 
 /**
  * Clear Localstorage state
- * @param {String} state
  */
 export const clearState = () => {
   try {
